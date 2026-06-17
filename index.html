@@ -325,7 +325,8 @@
       font-size: 13px;
       line-height: 1.5;
     }
-    .td-topics { display: flex; flex-wrap: wrap; gap: 4px; min-width: 180px; }
+    .td-topics { display: flex; flex-wrap: wrap; gap: 4px; width: 220px; }
+    th.col-topics, td.col-topics { width: 220px; min-width: 220px; }
 
     /* ── BADGES ──────────────────────────────────────────── */
     .badge {
@@ -891,7 +892,7 @@
             <th data-es="SENTIMIENTO" data-en="SENTIMENT">SENTIMIENTO</th>
             <th data-es="SCORE" data-en="SCORE">SCORE</th>
             <th data-es="RIESGO" data-en="RISK">RIESGO</th>
-            <th data-es="TEMAS" data-en="TOPICS">TEMAS</th>
+            <th class="col-topics" data-es="TEMAS" data-en="TOPICS">TEMAS</th>
             <th data-es="FUENTE" data-en="SOURCE">FUENTE</th>
           </tr>
         </thead>
@@ -1145,7 +1146,7 @@
             <td><span class="badge badge-${a.sentiment}">${a.sentiment}</span></td>
             <td><span style="font-family:var(--font-mono);font-size:13px;font-weight:500;color:var(--text-primary)">${a.sentiment_score}</span></td>
             <td><span class="badge badge-risk-${a.risk_level}">${a.risk_level}</span></td>
-            <td class="td-topics">${topics}</td>
+            <td class="col-topics"><div class="td-topics">${topics}</div></td>
             <td><span class="badge badge-source-${r.source}">${r.source}</span></td>
           </tr>`;
       }).join('');
